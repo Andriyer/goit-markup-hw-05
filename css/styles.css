@@ -98,15 +98,28 @@ body{
 .studio-hover{
   position: relative;
 }
-.studio-hover::after{
+.studio-after::after{
   content: "";
   display: block;
   border-radius: 2px;
   height: 4px;
-  background-color: teal;
+  background-color: var(--accent-color);
   position: absolute;
-  bottom: 0;
-  left: 0;
+  width: 100%;
+  top: 46px;
+}
+.portfolio-after{
+  position: relative;
+}
+.portfolio-after::after{
+  content: "";
+  display: block;
+  border-radius: 2px;
+  height: 4px;
+  background-color: var(--accent-color);
+  position: absolute;
+  width: 100%;
+  top: 46px;
 }
 
 /* .header-nav-list-item .link:hover::after{
@@ -576,6 +589,57 @@ width: 100%;
     border: 1px solid rgba(238, 238, 238, 1);
   } 
   /*=====End siteposters=====*/
+
+  /*======Modal window*/
+
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);;
+  z-index: 100;
+
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+.modal-window{
+  width: 530px;
+  height: 580px;
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px; 
+}
+
+.close-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: transparent;
+}
+.close-icon{
+  width: 18px;
+  height: 18px;
+}
+.is-hidden{
+  opacity: 0;
+  visibility: 0;
+  pointer-events: none;
+}
 
   /*======Components=======*/
   .description{
